@@ -18,6 +18,10 @@ public class Carro {
     }
 
     public double valorAluguel(int dias){
-        return dias * valorDiario;
+        double desc = 0;
+        if( dias >= 5){
+            desc = 50;
+        }
+        return (dias * valorDiario) - desc;
     }
 }
