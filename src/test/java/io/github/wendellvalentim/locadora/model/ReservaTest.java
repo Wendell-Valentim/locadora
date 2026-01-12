@@ -36,6 +36,14 @@ class ReservaTest {
         // JUnit
         assertThrows(ReservaInvalidaException.class, () -> new Reserva(carro, cliente, 0));
         assertDoesNotThrow(() -> new Reserva(carro, cliente, 1));
+
+        //AssertJ
+        //capturando o erro
+        var erro = catchThrowable(() -> new Reserva(carro,cliente,0));
+
+        //verificando se o erro é uma ReservaInvalidaExcption
+        assertThat(erro).isInstanceOf(ReservaInvalidaException.class)
+                .hasMessage("Reserva invalida!");
     }
 
     @Test
