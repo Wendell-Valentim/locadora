@@ -1,0 +1,27 @@
+package io.github.wendellvalentim.locadora.entity;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Entity
+@Table(name = "Carro")
+@Data
+public class CarroEntity {
+
+    public CarroEntity() {
+    }
+
+    public CarroEntity(String modelo, double valorDiaria) {
+
+        this.modelo = modelo;
+        this.valorDiaria = valorDiaria;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String modelo;
+
+    private double valorDiaria;
+}
