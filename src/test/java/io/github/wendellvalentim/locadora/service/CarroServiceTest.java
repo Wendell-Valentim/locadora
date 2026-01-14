@@ -61,4 +61,20 @@ class CarroServiceTest {
 
 
     }
+
+    @Test
+    void deveAtualizarUmcarro () {
+
+        var carroExistente = carro;
+        Mockito.when(repository.findById(1L)).thenReturn(Optional.of(carroExistente));
+
+        var carroAtualizado = new CarroEntity("Gol", 80.0, 2027);
+        Mockito.when(repository.save(Mockito.any())).thenReturn(carroAtualizado);
+
+        Long id = 1L;
+        var carro = new CarroEntity("Sedan", 0, 2023);
+
+        var resultado = service.atualizar(id, carro);
+
+    }
 }
