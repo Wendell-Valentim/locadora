@@ -63,7 +63,7 @@ class CarroRepositoryTest {
         carroRepository.deleteById(CarroSalvo.getId());
 
         Optional<CarroEntity> carroEncontrado = carroRepository.findById(CarroSalvo.getId());
-         
+
         assertThat(carroEncontrado).isEmpty();
     }
 
