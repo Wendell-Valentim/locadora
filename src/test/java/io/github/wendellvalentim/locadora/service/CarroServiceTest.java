@@ -119,7 +119,7 @@ class CarroServiceTest {
 
         assertThat(erro).isInstanceOf(EntityNotFoundException.class);
 
-       
+
 
     }
 
