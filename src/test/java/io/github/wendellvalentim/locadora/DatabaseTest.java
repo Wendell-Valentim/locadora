@@ -27,7 +27,7 @@ public class DatabaseTest {
     void testUserExists() throws Exception {
         var result = connection
                 .createStatement()
-                .executeQuery("select * rom users where id = 1");
+                .executeQuery("select * from users where id = 1");
         Assertions.assertTrue(result.next());
 
     }

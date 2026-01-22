@@ -52,7 +52,71 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+
+				<groupId>org.jacoco</groupId>
+
+				<artifactId>jacoco-maven-plugin</artifactId>
+
+				<version>0.8.12</version>
+
+
+
+				<configuration>
+
+					<excludes>
+
+						<exclude>**/model/**</exclude>
+
+						<exclude>**/entity/**</exclude>
+
+					</excludes>
+
+				</configuration>
+
+
+
+				<executions>
+
+					<!-- Prepara o agente para coletar dados -->
+
+					<execution>
+
+						<id>prepare-agent</id>
+
+						<goals>
+
+							<goal>prepare-agent</goal>
+
+						</goals>
+
+					</execution>
+
+
+
+					<!-- Gera o relatório depois dos testes -->
+
+					<execution>
+
+						<id>report</id>
+
+						<phase>verify</phase>
+
+						<goals>
+
+							<goal>report</goal>
+
+						</goals>
+
+					</execution>
+
+				</executions>
+
+			</plugin>
 		</plugins>
+
+
 	</build>
 
 </project>
